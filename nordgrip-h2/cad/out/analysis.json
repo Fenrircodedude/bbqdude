@@ -1,0 +1,50 @@
+{
+  "massa_g": {
+    "burkhållare": 65.4,
+    "ballastlock": 19.9,
+    "ballast_stål": 133.2,
+    "ok": 32.2
+  },
+  "stabilitet": {
+    "50 cl full": {
+      "pendlande_massa_g": 733,
+      "tp_under_axel_mm": 31.9,
+      "egenfrekvens_Hz": 1.39
+    },
+    "50 cl full (utan ballast)": {
+      "pendlande_massa_g": 600,
+      "tp_under_axel_mm": 17.4,
+      "egenfrekvens_Hz": 1.22
+    },
+    "50 cl halv": {
+      "pendlande_massa_g": 483,
+      "tp_under_axel_mm": 64.1,
+      "egenfrekvens_Hz": 1.61
+    },
+    "50 cl halv (utan ballast)": {
+      "pendlande_massa_g": 350,
+      "tp_under_axel_mm": 51.5,
+      "egenfrekvens_Hz": 1.62
+    },
+    "33 cl full": {
+      "pendlande_massa_g": 563,
+      "tp_under_axel_mm": 53.2,
+      "egenfrekvens_Hz": 1.7
+    },
+    "33 cl full (utan ballast)": {
+      "pendlande_massa_g": 430,
+      "tp_under_axel_mm": 39.6,
+      "egenfrekvens_Hz": 1.8
+    },
+    "tom hållare": {
+      "pendlande_massa_g": 218,
+      "tp_under_axel_mm": 83.6,
+      "egenfrekvens_Hz": 1.62
+    },
+    "tom hållare (utan ballast)": {
+      "pendlande_massa_g": 85,
+      "tp_under_axel_mm": 62.4,
+      "egenfrekvens_Hz": 1.68
+    }
+  }
+}

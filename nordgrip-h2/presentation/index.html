@@ -1,0 +1,190 @@
+<title>NORDGRIP H2 AutoLevel</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: mörk studiosida i en kolumn; varje vy är en bild i full bredd med text och mätvärden under. */
+:root{
+  color-scheme:dark;
+  --bg:#0b0c0e; --panel:#14161a; --line:#262a31; --fg:#e9eaec; --muted:#9a9fa8;
+  --accent:#ff7a1a; --accent-dim:#a34a0c; --steel:#c9ccd1;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --body:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+.wrap{max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:72px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.05}
+h1{font-size:clamp(44px,9vw,92px);font-weight:700;letter-spacing:.01em;text-transform:uppercase}
+h1 span{color:var(--accent)}
+h2{font-size:clamp(28px,4.5vw,40px);font-weight:600;text-transform:uppercase;letter-spacing:.02em}
+h3{font-size:20px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent)}
+p{margin:0;max-width:65ch}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+header{padding-top:48px;display:flex;flex-direction:column;gap:14px}
+.lede{font-size:19px;color:var(--fg)}
+section{display:flex;flex-direction:column;gap:20px}
+figure{margin:0;border:1px solid var(--line);background:#0b0c0e;position:relative}
+figure img{display:block;width:100%;height:auto}
+figure svg{position:absolute;inset:0;width:100%;height:100%}
+figcaption{font:12px var(--mono);color:var(--muted);padding:10px 14px;border-top:1px solid var(--line)}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.specs div{background:var(--panel);padding:14px 16px;display:flex;flex-direction:column;gap:2px}
+.specs b{font:600 26px var(--display);color:var(--fg)}
+.specs span{font-size:13px;color:var(--muted)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.two>*{min-width:0;display:flex;flex-direction:column;gap:12px}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 11.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+td.n,th.n{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+ol.key{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:10px 28px}
+ol.key li{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;font-size:15px}
+ol.key i{font:600 14px var(--mono);font-style:normal;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#111;display:grid;place-items:center}
+ul{margin:0;padding-left:20px;max-width:68ch;display:flex;flex-direction:column;gap:6px}
+.note{border-left:3px solid var(--accent);padding:4px 0 4px 16px;color:var(--fg)}
+code{font:13px var(--mono);color:var(--steel)}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+footer{font:12px var(--mono);color:var(--muted);border-top:1px solid var(--line);padding-top:18px}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">NORDGRIP · H2 · Konceptprototyp rev A</div>
+  <h1>H2 <span>AutoLevel</span></h1>
+  <p class="lede">Ett ölhölster för bältet som håller burken lodrät när du böjer dig. Ingen elektronik. Burkhållaren hänger i två korsande kullagrade axlar med tyngdpunkten under axlarna, så gravitationen gör jobbet.</p>
+</header>
+
+<section>
+  <figure><img src="hero.png" alt="Hölstret monterat på ett bälte med en 50 cl-burk. Svart ok med två lagrade armar, orange bottenlock."><figcaption>Vy 1 · Monterat på bälte med 50 cl-burk · rendering direkt ur CAD-modellen</figcaption></figure>
+  <div class="specs">
+    <div><b>±60°</b><span>framåt/bakåt (pitch)</span></div>
+    <div><b>±20°</b><span>åt sidorna (roll)</span></div>
+    <div><b>Ø69 mm</b><span>invändigt, för 33 och 50 cl</span></div>
+    <div><b>100 mm</b><span>burkhållarens höjd</span></div>
+    <div><b>≤45 mm</b><span>bältesbredd</span></div>
+    <div><b>0</b><span>batterier, motorer, sensorer</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Så håller den burken lodrät</h2>
+  <figure><img src="tilt.png" alt="Sidovy: bältet och navplattan lutar 45 grader medan ok, burkhållare och burk hänger lodrätt."><figcaption>Vy 2 · Bäraren lutar sig 45° framåt · bälte och navplatta följer kroppen, ok och burk hänger kvar i lod</figcaption></figure>
+  <div class="two">
+    <div><h3>Pitch: framåt och bakåt</h3><p>Hela oket hänger på en M8-axel i två 608-lager i navplattan. Axeln pekar rakt ut från höften. När du böjer dig framåt vrider sig plattan runt axeln, och oket med burken pendlar parallellt med kroppen. Därför finns inget i vägen: rörelsen tål ±60° innan okets balk går mot stoppklacken.</p></div>
+    <div><h3>Roll: åt sidorna</h3><p>Burkhållaren hänger i okets två armar på M5-tappar i 625-lager. Den axeln ligger längs bältet. Här begränsar kroppen: burkens botten svänger in mot låret när du lutar dig bort från hölstret. Stoppen sitter på ±20°, och burken står 75 mm ut från plattan för att få det utrymmet.</p></div>
+  </div>
+  <p class="note">Eftersom pitchaxeln sitter ytterst förblir rollaxeln vågrät oavsett hur mycket du böjer dig framåt. Axlarna stör alltså inte varandra, och de korsas i en punkt 90 mm över burkens botten.</p>
+</section>
+
+<section>
+  <h2>Delarna</h2>
+  <figure><img src="exploded.png" alt="Exploderad vy med bältesklämma, låsregel, navplatta, lager och axel, ok, burkhållare, ballastskiva och bottenlock."><figcaption>Vy 3 · Exploderad vy · från vänster: bältesklämma och låsregel, navplatta, pitchaxel med lager, ok, burkhållare, ballast, bottenlock</figcaption></figure>
+  <div class="tbl"><table>
+    <thead><tr><th>Del</th><th>Material</th><th>Utskrift, stödfri orientering</th><th class="n">Mått på plattan (mm)</th></tr></thead>
+    <tbody>
+    <tr><td>Bältesklämma</td><td>PETG svart</td><td>På sidan, U-profilen extruderas uppåt</td><td class="n">65 × 17 × 56</td></tr>
+    <tr><td>Navplatta (yttre ram)</td><td>PETG svart</td><td>Baksidan ned, lagersätet vertikalt</td><td class="n">67 × 64 × 32</td></tr>
+    <tr><td>Ok (gimbalram)</td><td>PETG svart</td><td>Plant, som monterat</td><td class="n">66 × 104 × 22</td></tr>
+    <tr><td>Burkhållare</td><td>PETG svart</td><td>Stående på botten</td><td class="n">76 × 84 × 124</td></tr>
+    <tr><td>Bottenlock med ballastficka</td><td>PETG orange</td><td>Fickan uppåt</td><td class="n">76 × 76 × 9</td></tr>
+    <tr><td>Låsregel</td><td>PETG orange</td><td>Stående på huvudet</td><td class="n">9 × 32 × 23</td></tr>
+    <tr><td>Buffertar och stopphylsa</td><td>TPU 95A orange</td><td>Plant</td><td class="n">små</td></tr>
+    </tbody></table></div>
+  <div class="two">
+    <div><h3>Köpdelar</h3>
+      <ul>
+        <li>2 kullager 608ZZ (8×22×7) för pitch</li>
+        <li>2 kullager 625ZZ (5×16×5) för roll</li>
+        <li>M8×35 låghuvad insexskruv, låsmutter, 3 passbrickor</li>
+        <li>2 M5×16 kullrig skruv, 2 M5 gänginsatser, 2 distanshylsor 5×8×5</li>
+        <li>4 M3×10 försänkt skruv och 4 M3 gänginsatser (platta mot klämma)</li>
+        <li>3 M3×10 plastskruv för bottenlocket</li>
+        <li>Stålrondell Ø60×6 mm, cirka 133 g, som ballast</li>
+      </ul></div>
+    <div><h3>Utskrift på Bambu Lab A1</h3>
+      <ul>
+        <li>PETG, 0,4 mm munstycke, 0,2 mm lager</li>
+        <li>4 perimetrar, 25 % gyroid. Väggar 3,5 mm i burkhållaren</li>
+        <li>Alla delar är orienterade så att de skrivs utan stöd. Fönstren har 45° topp, lagerklackarna 45° undersida</li>
+        <li>Lagersätena har 0,05 mm passning i modellen. Skriv ut ett provsäte och justera <code>FIT</code></li>
+        <li>Svart och orange i samma utskrift går med AMS lite, men delarna är redan uppdelade per färg</li>
+      </ul></div>
+  </div>
+</section>
+
+<section>
+  <h2>Snitt genom mekanismen</h2>
+  <figure><img src="section.png" alt="Tekniskt snitt genom bältesklämma, nav med två kullager, ok, burkhållare med 33 cl-burk och ballast.">
+    <svg viewBox="0 0 1600 1200" aria-hidden="true" font-family="JetBrains Mono, monospace" font-size="26" font-weight="600">
+      <g stroke="#ff7a1a" stroke-width="3" fill="none">
+        <line x1="380" y1="450" x2="1190" y2="450" stroke-dasharray="26 8 4 8"/>
+        <circle cx="950" cy="450" r="13"/><circle cx="950" cy="450" r="3.5" fill="#ff7a1a"/>
+        <path d="M765 957 A540 540 0 0 0 1135 957"/>
+        <path d="M765 957 l22 -4 M765 957 l10 20 M1135 957 l-22 -4 M1135 957 l-10 20"/>
+        <line x1="350" y1="450" x2="372" y2="450"/>
+        <line x1="1232" y1="338" x2="964" y2="442"/>
+        <line x1="1230" y1="715" x2="972" y2="715"/>
+        <line x1="640" y1="170" x2="640" y2="250"/>
+        <line x1="694" y1="632" x2="720" y2="508"/>
+        <line x1="1230" y1="935" x2="1104" y2="935"/>
+        <line x1="350" y1="614" x2="466" y2="590"/>
+        <line x1="838" y1="194" x2="772" y2="298"/>
+      </g>
+      <g><circle cx="950" cy="715" r="16" fill="#0b0c0e" stroke="#ff7a1a" stroke-width="3"/><path d="M950 699 A16 16 0 0 1 966 715 L950 715 Z M950 731 A16 16 0 0 1 934 715 L950 715 Z" fill="#ff7a1a"/></g>
+      <g fill="#ff7a1a"><circle cx="330" cy="450" r="21"/><circle cx="1250" cy="330" r="21"/><circle cx="1250" cy="715" r="21"/><circle cx="640" cy="150" r="21"/><circle cx="690" cy="652" r="21"/><circle cx="1250" cy="935" r="21"/><circle cx="330" cy="620" r="21"/><circle cx="850" cy="176" r="21"/><circle cx="950" cy="1040" r="21"/></g>
+      <g fill="#111" text-anchor="middle"><text x="330" y="459">1</text><text x="1250" y="339">2</text><text x="1250" y="724">3</text><text x="640" y="159">4</text><text x="690" y="661">5</text><text x="1250" y="944">6</text><text x="330" y="629">7</text><text x="850" y="185">8</text><text x="950" y="1049">9</text></g>
+    </svg>
+    <figcaption>Vy 4 · Snitt i planet genom pitchaxeln, sett längs bältet · 33 cl-burk · skala 5 px/mm</figcaption></figure>
+  <ol class="key">
+    <li><i>1</i><span><b>Pitchaxel.</b> M8-skruv genom två 608-lager i navet. Streckprickad linje. Rotationen sker runt den linjen.</span></li>
+    <li><i>2</i><span><b>Rollaxel.</b> Går vinkelrätt mot snittet genom burkens mitt, i två 625-lager i okets armar.</span></li>
+    <li><i>3</i><span><b>Tyngdpunkt.</b> 53 mm under axlarna med full 33 cl-burk, 32 mm med full 50 cl.</span></li>
+    <li><i>4</i><span><b>Pitchstopp.</b> En klack med TPU-hylsa. Okets balk tar i den vid +60° och −60°.</span></li>
+    <li><i>5</i><span><b>Rollstopp.</b> Två TPU-buffertar på okets balk möter burkhållarens rygg vid ±20°.</span></li>
+    <li><i>6</i><span><b>Ballast.</b> Stålrondell i bottenlocket, 97 mm under axlarna.</span></li>
+    <li><i>7</i><span><b>Bältesspår och låsregel.</b> Klämman hakas över bältet. Regeln skjuts in under bältet och snäpper fast bakom tungan.</span></li>
+    <li><i>8</i><span><b>Ryggfena.</b> Stöder höga burkar och är anslagsyta för det övre rollstoppet.</span></li>
+    <li><i>9</i><span><b>Rollrörelse.</b> Burkhållarens botten svänger ±20° i snittets plan.</span></li>
+  </ol>
+</section>
+
+<section>
+  <h2>Stabilitet i siffror</h2>
+  <p>Hållaren är stabil så länge den pendlande massans tyngdpunkt ligger under axlarna. Siffrorna är beräknade ur CAD-modellens volymer med 75 % effektiv fyllnad i PETG-delarna.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Last</th><th class="n">Pendlande massa</th><th class="n">Tyngdpunkt under axel</th><th class="n">Egenfrekvens</th></tr></thead>
+    <tbody>
+    <tr><td>50 cl, full</td><td class="n">733 g</td><td class="n">32 mm</td><td class="n">1,4 Hz</td></tr>
+    <tr><td>50 cl, full, utan ballast</td><td class="n">600 g</td><td class="n">17 mm</td><td class="n">1,2 Hz</td></tr>
+    <tr><td>50 cl, halvfull</td><td class="n">483 g</td><td class="n">64 mm</td><td class="n">1,6 Hz</td></tr>
+    <tr><td>33 cl, full</td><td class="n">563 g</td><td class="n">53 mm</td><td class="n">1,7 Hz</td></tr>
+    <tr><td>Tom hållare</td><td class="n">218 g</td><td class="n">84 mm</td><td class="n">1,6 Hz</td></tr>
+    </tbody></table></div>
+  <div class="two">
+    <div><h3>Ballasten behövs för 50 cl</h3><p>En full 50 cl-burk har sin tyngdpunkt bara 10 mm under axlarna. Utan ballast blir marginalen 17 mm och hållaren rätar upp sig trögt. Stålrondellen i bottenlocket fördubblar nästan marginalen.</p></div>
+    <div><h3>Dämpning är inte valfritt</h3><p>Egenfrekvensen 1,2–1,7 Hz ligger nära gångens takt, ungefär 0,9 Hz i sidled och 1,8 Hz i stegled. Utan dämpning kan burken börja gunga i takt med stegen. Grundlösning: byt lagerfettet mot trögflytande dämpfett. Det bromsar rörelsen men ger inget vilofel. Nästa steg är en virvelströmsbroms med två neodymmagneter mot en aluminiumplåt på navet.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Burken i och ur med en hand</h2>
+  <p>Burkhållaren är öppen 120° framåt, från bottenringen och hela vägen upp. Du greppar burken runt sidorna som ett glas och lyfter rakt upp. Öppningens bredd är 60 mm, alltså smalare än burkens 66 mm, så burken kan inte glida ut åt sidan. Spelet på 1,5 mm runt om gör att den inte kläms fast. Två fönster bakåt ventilerar och släpper ut kondens, och golvet har ett dräneringshål på 24 mm.</p>
+</section>
+
+<section>
+  <h2>Det här är inte provat än</h2>
+  <ul>
+    <li>Modellen är geometriskt kontrollerad men inte utskriven. Passningar, snäpphaken på låsregeln och gänginsatsernas hål behöver en provutskrift.</li>
+    <li>Hållfastheten är inte beräknad. Mest belastat är navet och okets balk, som bär cirka 0,8 kg på 75 mm hävarm. Skriv dem med fibrerna längs lasten enligt orienteringen ovan.</li>
+    <li>Sidokompensationen stannar vid ±20°. Mer kräver att burken sitter längre ut från kroppen.</li>
+    <li>En öppen, full burk kan fortfarande skvalpa vid snabba ryck. Gimbalen tar bort lutningen, inte accelerationen.</li>
+    <li>Ett transportlås som låser oket i mittläget när du går fort eller springer saknas i rev A.</li>
+  </ul>
+  <p class="note">De fotorealistiska versionerna av vy 1–3 är genererade med CAD-bilderna som förlaga och ligger i ditt Higgsfield-bibliotek. Den här sessionen fick inte hämta hem bildfilerna, så sidan visar CAD-renderingarna.</p>
+</section>
+
+<footer>NORDGRIP H2 AutoLevel · rev A · parametrisk CadQuery-modell: <code>nordgrip-h2/cad/nordgrip_h2.py</code> · STEP och STL i <code>cad/out/</code></footer>
+</div>
